@@ -1,0 +1,158 @@
+<configuration>
+
+  <property>
+    <name>yarn.scheduler.capacity.maximum-applications</name>
+    <value>30</value>
+    <description>
+      Maximum number of applications that can be pending and running.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
+    <value>0.1</value>
+    <description>
+      Maximum percent of resources in the cluster which can be used to run 
+      application masters i.e. controls number of concurrent running
+      applications.
+    </description>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.acl_submit_applications</name>
+    <value> </value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.acl_administer_queue</name>
+    <value>hadoop hdfs</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.queues</name>
+    <value>dev,qa,prod</value>
+    <description>
+      The queues at the this level (root is the root queue).
+    </description>
+  </property>
+
+<!-- queue: dev for data loading jobs -->
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.capacity</name>
+    <value>20</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.maximum-capacity</name>
+    <value>80</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.user-limit-factor</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.minimum-user-limit-percent</name>
+    <value>100</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.state</name>
+    <value>RUNNING</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.acl_submit_applications</name>
+    <value>q1,q2</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.acl_administer_queue</name>
+    <value>q1,q2</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.capacity</name>
+    <value>35</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.maximum-capacity</name>
+    <value>50</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.user-limit-factor</name>
+    <value>5</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.minimum-user-limit-percent</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.dev.state</name>
+    <value>RUNNING</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.acl_submit_applications</name>
+    <value>hadoop q1</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.qa.acl_administer_queue</name>
+    <value>hadoop, q2,q1</value>
+  </property>
+
+<!-- queue: prod for eBay Research Labs -->
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.capacity</name>
+    <value>45</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.maximum-capacity</name>
+    <value>50</value>
+  </property>
+  
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.user-limit-factor</name>
+    <value>3</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.minimum-user-limit-percent</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.state</name>
+    <value>RUNNING</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.acl_submit_applications</name>
+    <value>q1</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.prod.acl_administer_queue</name>
+    <value>hadoop q1</value>
+  </property>
+
+
+  <property>
+    <name>yarn.scheduler.capacity.node-locality-delay</name>
+    <value>50</value>
+    <description>
+      Number of missed scheduling opportunities after which the CapacityScheduler 
+      attempts to schedule rack-local containers. 
+      Typically this should be set to number of racks in the cluster, this 
+      feature is disabled by default, set to -1.
+    </description>
+  </property>
+
+</configuration>

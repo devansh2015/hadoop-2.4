@@ -1,0 +1,4 @@
+hadoopmonitor readonly
+hadoopadmin readwrite \
+    create javax.management.monitor.*,javax.management.timer.* \
+unregister

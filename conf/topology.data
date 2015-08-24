@@ -1,0 +1,15 @@
+192.168.1.9 /rack1
+nn1.hadoop.com /rack1
+nn1 /rack1
+192.168.1.8 /rack1
+nn2.hadoop.com /rack1
+nn2 /rack1
+192.168.1.10 /rack2
+dn1.hadoop.com /rack2
+dn1 /rack2
+192.168.1.11 /rack2
+dn2.hadoop.com /rack2
+dn2 /rack2
+192.168.1.12 /rack3
+dn3.hadoop.com /rack3
+dn3 /rack3

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+        <property>
+                <name>fs.defaultFS</name>
+                <value>hdfs://nn1.hadoop.com:8020</value>
+                <description>Enter your NameNode hostname</description>
+        </property>
+	<property>
+		<name>io.compression.codecs</name>
+		<value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+	</property>
+	<property>
+		<name>topology.script.file.name</name> 
+		<value>/apache/hadoop/conf/rack-topology.sh</value>
+	</property>
+
+	<property> 
+		<name>topology.script.number.args</name> 
+		<value>1</value>
+	</property>
+	<property>
+		<name>hadoop.security.authentication</name>
+		<value>kerberos</value>
+	</property>
+	<property>
+                <name>hadoop.security.authorization</name>
+                <value>true</value>
+        </property>
+	<property>
+                <name>hadoop.rpc.protection</name>
+                <value>privacy</value>
+        </property>
+</configuration>

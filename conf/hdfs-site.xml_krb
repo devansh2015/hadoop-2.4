@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+       <property>
+                <name>dfs.namenode.name.dir</name>
+                <value>file:///x/hadoop/hdfs/nn,file:///y/hadoop/hdfs/nn</value>
+                <description>Comma separated list of paths. Use the list of directories from $DFS_NAME_DIR.
+                 For example, /grid/hadoop/hdfs/nn,/x/hadoop/hdfs/nn.</description>
+        </property> 
+        <property>
+                <name>dfs.datanode.data.dir</name>
+                <value>/x/hadoop/hdfs/data, /y/hadoop/hdfs/data</value>
+                <description>Comma separated list of paths. Use the list of directories from $DFS_DATA_DIR.
+                For example, file:///grid/hadoop/hdfs/dn, file:///x/hadoop/hdfs/dn.</description>
+        </property>
+        <property>
+                <name>dfs.replication</name>
+                <value>3</value>
+        </property>
+	<property>
+		<name>dfs.namenode.http-address</name>
+		<value>nn1.hadoop.com:50070</value>
+	</property>
+        <property>
+          <name>dfs.permissions</name>
+            <value>false</value>
+         </property>
+	<property>
+		<name>dfs.hosts.exclude</name>
+		<value>/apache/hadoop/conf/dfs.exclude</value>
+	</property>
+        <property>
+                <name>dfs.hosts.include</name>
+                <value>/apache/hadoop/conf/dfs.include</value>
+        </property>
+
+<!-- Kerberos security config -->
+	<property>
+                <name>dfs.block.access.token.enable</name>
+                <value>true</value>
+        </property>
+	<property>
+                <name>dfs.namenode.kerberos.principal</name>
+                <value>hdfs/_HOST@HADOOP.COM</value>
+        </property>
+	<property>
+                <name>dfs.namenode.keytab.file</name>
+                <value>/apache/hadoop/keytabs/hdfs.nn1.keytab</value>
+        </property>
+	<property>
+                <name>dfs.datanode.kerberos.principal</name>
+                <value>hdfs/_HOST@HADOOP.COM</value>
+        </property>
+        <property>
+                <name>dfs.datanode.keytab.file</name>
+                <value>/apache/hadoop/keytabs/hdfs.keytab</value>
+        </property>
+	<property>
+                <name>dfs.datanode.address</name>
+                <value>0.0.0.0:1004</value>
+        </property>
+	<property>
+                <name>dfs.datanode.http.address</name>
+                <value>0.0.0.0:1006</value>
+        </property>
+	<property>
+                <name>dfs.web.authentication.kerberos.principal</name>
+                <value>HTTP/_HOST@HADOOP.COM</value>
+        </property>
+	<property>
+                <name>dfs.web.authentication.kerberos.keytab</name>
+                <value>/apache/hadoop/keytabs/hdfs.keytab</value>
+        </property>
+	<property>
+                <name>dfs.namenode.kerberos.internal.spnego.principal</name>
+                <value>HTTP/_HOST@HADOOP.COM</value>
+        </property>
+	<property>
+                <name>dfs.namenode.kerberos.internal.spnego.keytab</name>
+                <value>/apache/hadoop/keytabs/hdfs.keytab</value>
+        </property>
+
+	<property>
+		<name>dfs.namenode.kerberos.internal.spnego.principal</name>
+		<value>http/_HOST@HADOOP.COM</value>
+	</property>
+	<property>
+		<name>dfs.namenode.keytab.file</name>
+		<value>/apache/hadoop/keytabs/hdfs.keytab</value>
+	</property>
+	<property>
+		<name>dfs.namenode.kerberos.principal</name>
+		<value>hdfs/_HOST@HADOOP.COM</value>
+	</property>
+
+</configuration>
